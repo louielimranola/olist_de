@@ -1,0 +1,24 @@
+version: 2
+
+
+sources:
+  - name: olist
+    database: dev
+    schema: public
+    # freshness: -- schema level freshness check -- dbt source freshness
+    #   warn_after: {count: 12, period: hour}
+    #   error_after: {count: 1, period: day}
+    # loaded_at_field: created_at
+    tables:
+      - name: customer
+      - name: geolocation
+      - name: order
+      - name: order_items
+      - name: order_payments
+      - name: order_reviews
+      - name: orders
+
+      - name: product_category
+      - name: products
+      - name: sellers
+          

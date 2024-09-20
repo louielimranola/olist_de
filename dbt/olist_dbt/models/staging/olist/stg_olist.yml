@@ -1,0 +1,29 @@
+version: 2
+
+
+
+models:
+  - name: stg_customers 
+    description: contains basic info per customer
+    columns: 
+      - name: customer_id
+        description: primary key
+        data_tests:
+          - unique
+          - not_null
+
+
+  - name: stg_orders
+    description: contains all order transactions and details
+    columns:
+      - name: order_id
+        description: primary key
+        data_tests:
+          - unique
+          - not_null
+      - name: order_status
+        description: "{{ doc('order_status') }}"
+        data_tests:
+          - accepted_values:
+              values: ['delivered', 'canceled', 'invoiced', 'processing', 'created', 'shipped', 'unavailable', 'approved']
+  

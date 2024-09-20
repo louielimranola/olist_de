@@ -1,6 +1,5 @@
 version: 2
 
-
 sources:
   - name: olist
     database: dev
@@ -11,14 +10,34 @@ sources:
     # loaded_at_field: created_at
     tables:
       - name: customer
+        description: raw customers data
+        columns:
+          - name: customer_id
+            data_tests:
+              - unique
+              - not_null
+
       - name: geolocation
+
       - name: order
+        description: raw orders data
+
+
       - name: order_items
+
       - name: order_payments
+
       - name: order_reviews
+
       - name: orders
+        columns:
+          - name: order_id
+            data_tests:
+              - unique
+              - not_null
 
       - name: product_category
+
       - name: products
+
       - name: sellers
-          
